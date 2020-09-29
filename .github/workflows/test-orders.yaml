@@ -2,16 +2,15 @@
 name: test-orders
 on:
    pull_request:
-      branches: master dev
+      path: 
+	- 'auth/**'
 
 jobs:
   build:
    runs-on: ubuntu-latest
 
     steps:
-
       - uses: actions/checkout@v2
-
-        - name: test orders
-         run: cd orders && npm install && npm run test:ci
+      - name: test orders
+        run: cd orders && npm install && npm run test:ci
 
